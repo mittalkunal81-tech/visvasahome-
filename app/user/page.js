@@ -20,20 +20,6 @@ import HeroSection from "./sections/herosection/page";
 
 
 
-export default function UserHome() {
-  const router = useRouter();
-  const [searchQuery, setSearchQuery] = useState("");
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) router.push("/login");
-  }, [router]);
-
-  const handleSearch = (e) => {
-    if (e.key === "Enter" && searchQuery.trim() !== "") {
-      router.push(`/user/search?query=${searchQuery}`);
-    }
-  };
 
 
   return (
